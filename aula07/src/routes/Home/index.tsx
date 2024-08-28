@@ -1,16 +1,48 @@
-import { Link } from "react-router-dom";
+import { listaProdutos } from "../../listaProdutos";
 
+export default function Produtos(){
 
-export default function Home(){
-
-    //MUDANDO O TÍTULO DA PÁGINA!!!
-    document.title = "Home";
+      //MUDANDO O TÍTULO DA PÁGINA!!!
+      document.title = "PRODUTOS";
 
     return(
       <div>
-        <h1>Olá, mundo sou o Home!</h1>
-        <p>Este o componente da página principal...</p>
-        <p><Link to="/editar/produtos/1500">Editar Produto - 1500</Link></p>
+        <h1>Produtos Eletrônicos</h1>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Cor</th>
+                <th>Foto</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {listaProdutos.map((produto)=>(
+                <tr key={produto.id}>
+                    <td>{produto.id}</td>
+                    <td>{produto.nome}</td>
+                    <td>{produto.qtd}</td>
+                    <td>{produto.preco}</td>
+                    <td>{produto.cor}</td>
+                    <td>{produto.imagem}</td>
+                </tr>                
+              ))}
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={6}>
+                  Quantidade de produtos atual : {listaProdutos.length}
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     );
   }

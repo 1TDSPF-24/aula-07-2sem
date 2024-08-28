@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const MeuH1 = styled.h1`
     background-color: blueviolet;
