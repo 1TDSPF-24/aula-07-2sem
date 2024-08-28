@@ -1,3 +1,4 @@
+import { listaProdutos } from "../../listaProdutos";
 
 
 export default function Produtos(){
@@ -7,7 +8,43 @@ export default function Produtos(){
 
     return(
       <div>
-        <h1>Olá, mundo sou o Produtos!</h1>
+        <h1>Produtos Eletrônicos!</h1>
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Cor</th>
+                <th>Imagem</th>
+              </tr>
+            </thead>
+            <tbody>
+              {listaProdutos.map((produto) => 
+              (
+                <tr key={produto.id}>
+                  <td>{produto.id}</td>
+                  <td>{produto.nome}</td>
+                  <td>{produto.qtd}</td>
+                  <td>{produto.preco}</td>
+                  <td>{produto.cor}</td>
+                  <td>{produto.imagem}</td>
+                </tr>
+                
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={6}>
+                  Quantidade de produtos Atual: {listaProdutos.length}
+                </td>
+                </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     );
   }

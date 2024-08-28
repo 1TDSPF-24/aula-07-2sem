@@ -60,3 +60,10 @@ export const MenuLink = styled.a`
   padding: 10px 20px;
   display: block;
 `
+
+export const img404 = styled.img`
+  display: block;
+  border-radius: 60px;
+  widows: 50%;
+  margin: 0 auto;
+  `
