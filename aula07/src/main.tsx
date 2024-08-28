@@ -15,6 +15,7 @@ const routes = createBrowserRouter([
     {path:"/",element:<Home/>},
     {path:"/produtos",element:<Produtos/>},
     {path:"/editar/produtos/:id",element:<EditarProdutos/>},
+    // se mudarmos para :id/:id2 , caso seja passado apenas um parâmetro ele irá dar erro
   ]} 
 ])
 

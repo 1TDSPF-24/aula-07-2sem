@@ -1,4 +1,6 @@
-
+import { Link } from "react-router-dom";
+import {listaProdutos} from "../../listaProdutos";
+import { FaEdit as Editar } from "react-icons/fa";
 
 export default function Produtos(){
 
@@ -7,7 +9,44 @@ export default function Produtos(){
 
     return(
       <div>
-        <h1>Olá, mundo sou o Produtos!</h1>
+        <h1>Produtos Eletrônicos</h1>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Cor</th>
+                <th>Foto</th>
+                <th>Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {listaProdutos.map((produto)=>(
+                <tr key={produto.id}>
+                  <td>{produto.id}</td>
+                  <td>{produto.nome}</td>
+                  <td>{produto.qtd}</td>
+                  <td>{produto.preco}</td>
+                  <td>{produto.cor}</td>
+                  <td>{produto.imagem}</td>
+                  <td><Link to={`/editar/produtos/${produto.id}`}><Editar/></Link></td> {/*parâmetro necessario para o Editar */}
+                </tr>
+              ))}
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={6}>
+                  Quantidade de produtos atual: {listaProdutos.length}
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     );
   }

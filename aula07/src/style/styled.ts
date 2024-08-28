@@ -60,3 +60,9 @@ export const MenuLink = styled.a`
   padding: 10px 20px;
   display: block;
 `
+
+export const Img404 = styled.img`
+  display:block;
+  margin:0 auto;
+  width:50%
+`
