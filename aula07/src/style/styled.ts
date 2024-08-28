@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const MeuH1 = styled.h1`
     background-color: blueviolet;
@@ -59,4 +59,10 @@ export const MenuLink = styled.a`
   text-decoration: none;
   padding: 10px 20px;
   display: block;
+`
+
+export const Img404 = styled.img`
+  display:block;
+  margin:0 auto;
+  width:50%;
 `
