@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { listaProdutos } from "../../listaProdutos";
+import { FaEdit as Editar } from "react-icons/fa";
 
 export default function Produtos(){
 
@@ -18,6 +20,8 @@ export default function Produtos(){
                 <th>Preço</th>
                 <th>Cor</th>
                 <th>Foto</th>
+                <th>Editar</th>
+
               </tr>
             </thead>
             <tbody>
@@ -30,6 +34,8 @@ export default function Produtos(){
                     <td>{produto.preco}</td>
                     <td>{produto.cor}</td>
                     <td>{produto.imagem}</td>
+                    <td><Link to={`/editar/produtos/${produto.id}`}><Editar/></Link> </td>
+                    
                 </tr>                
               ))}
 
